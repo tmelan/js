@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review09</title>
+    <style>
+        .red-Color {color:red;}
+        .blue-Color {color:blue;}
+    </style>
+</head>
+<body>
+    <!-- onsubmit 함수 결과에 따라 작동여부 결정 -->
+    <form action="" onsubmit="return checkValid();"> 
+        <table>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="text" name="pwd"></td>
+            </tr>
+            <tr>
+                <td>비밀번호 확인</td>
+                <td><input type="text" name="pwd2"></td>
+            </tr>
+            <tr>
+                <td colspan="2" id="pwd-result">비밀번호 일치여부</td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="email"></td>            
+            </tr>
+            <tr>
+                <td colspan="2" id="email-result">이메일 유효성 검사</td>
+            </tr>       
+            <tr>
+                <td><input type="submit" value="회원가입"></td> 
+            </tr>       
+        </table>
+        <!-- input type submit 은 button 과 같다 -->
+    </form>
+    <script>
+        let isPwdOk = false; //기본값
+        let isEmailOk = false;
+        
+        const pwd = document.querySelector("input[name=pwd]");
+        const pwd2 = document.querySelector("input[name=pwd2]");
+        const pwdResult = document.querySelector("#pwd-result");
+
+        //pwd2까지 입력했을때가 비번입력이 완료된거 그때 이벤트 발생시키기
+        pwd2.addEventListener("blur" , () => { //blur 마우스가 밖에 있을 때
+            //비번 일치 확인
+            if( pwd.value === pwd2.value ) {
+                isPwdOk = true;
+                pwdResult.innerText = "일치합니다";
+                pwdResult.style.color = "blue";
+                //pwdResult.classList.add("red-color");//이런것도 가능
+            } else {
+                isPwdOk = false;
+                pwdResult.innerText = "불일치합니다";
+                pwdResult.style.color = "red";
+            }
+        });
+
+        //이메일 일치 확인
+        const email = document.querySelector("input[type=email]");
+        const emailResult = document.querySelector("#email-result");
+
+        email.addEventListener("blur", () => {      
+             ///아무거나 . 한개이상+/ \. 진짜 점 ^ 처음 $마지막     
+            const str = email.value; //이메일에 입력한 값 꺼내기
+           
+            const reg = /^.+@.+\..+$/; //정규표현식
+            const result = reg.test(str);
+            if(result) {
+                isEmailOk = true;
+                emailResult.innerText = "사용 가능한 이메일입니다.";
+                emailResult.style.color = "blue";
+            } else {
+                isEmailOk = false;
+                emailResult.innerText = "사용 불가능한 이메일입니다.";
+                emailResult.style.color = "red";
+            }
+        });
+
+        //비번, 이메일 모두 다 괜찮아야 가입 버튼 제출가능하게 하기
+        function checkValid(){
+
+            if(!isPwdOk) {
+                alert("비번을 확인하세요");
+                return false;
+            }
+            if(!isEmailOk) {
+                alert("메일을 확인하세요");
+                return false;
+            }
+            
+            return true; //둘 다 문제 없을때
+        }
+
+    </script>
+</body>
+</html>

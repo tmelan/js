@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>review09</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td>아 이 디</td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <td>비 밀 번 호</td>
+                <td><input type="text" name="pwd"></td>
+            </tr>
+            <tr>
+                <td>비밀번호 확인</td>
+                <td><input type="text" name="pwd2"></td>
+            </tr>
+            <tr>
+                <td colspan="2" id="pwd">비밀번호 일치여부</td>
+            </tr>
+            <tr>
+                <td>이 메 일</td>
+                <td><input type="email" id="email"></td>            
+            </tr>
+            <tr>
+                <td colspan="2">이메일 유효성 검사</td>
+            </tr>       
+            <tr>
+                <td><input type="submit" value="회원가입"></td> 
+            </tr>       
+        </table>
+        <!-- input type submit 은 button 과 같다 -->
+    </form>
+    <script>
+        const joinBtn = document.querySelector("input[type=submit]");
+
+        function f01() {
+            const p1 = document.querySelector("input[name=pwd]").value;
+            const p2 = document.querySelector("input[name=pwd2]").value;
+            const pwdResult = document.querySelector("#pwd");  
+
+            if(p1==p2) {
+                pwdResult.innerText = "일치합니다";
+                return true;
+            } else {
+                pwdResult.innerHTML = '<strong">패스워드가 일치하지 않습니다.</strong>';
+                return false;
+            }
+          
+            //innertext 로 글자바꿈, <strong>으로 진하게 적용하고 싶으면 innterHTML을 사용!!
+            //글자 색깔 태그 안에서 바로 적용하지말고 style은 위에서 작성
+            
+        }
+
+    </script>
+
+    </script>
+</body>
+</html>

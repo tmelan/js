@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습06</title>
+</head>
+<body>
+    <h1>복습06</h1>
+
+    <input type="text" id="t">
+
+    <script>
+
+        const h1 = document.querySelector("h1"); //여러개 있어도 첫번째 요소에만 해당됨
+        h1.addEventListener("contextmenu", () => { 
+            /*dblclick : doublc click 시 동작, mousedown/up : 마우스 누를때/땔 때 동작, 
+            contextmenu : 마우스 오른쪽 버튼 동작, mouseover/out : 마우스가 올라가/내려가 있으면 동작
+            mousemove : 마우스가 요소 안에서 움직일때마다 동작, mdn 사이트나 구글 js마우스 이벤트 검색해서 더 확인가능
+            */
+            alert("11");
+        });
+
+        //keyboard event 
+        const t = document.querySelector("#t");
+        t.addEventListener("keydown", () => {
+            /* keypress, keydown, focus, change 등이 있음 */
+            alert("22");
+        });
+
+    </script>
+</body>
+</html>
