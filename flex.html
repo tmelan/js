@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            border: 1px solid red;
+            width : 500px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            /* flex-direction: row-reverse; */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+
+        .item{
+            border:1px solid blue;
+            width: 100px;
+            height:100px;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+        #target {
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>flex</h1>
+
+    <!-- .outer>(.item>span{$번스팬})*3 -->
+    <div class="outer">
+        <div class="item"><span>1번스팬</span></div>
+        <div class="item" id="target"><span>2번스팬</span></div>
+        <div class="item"><span>3번스팬</span></div>
+        <div class="item"><span>3번스팬</span></div>
+        <div class="item"><span>3번스팬</span></div>
+        <div class="item"><span>3번스팬</span></div>
+        <div class="item"><span>3번스팬</span></div>
+        <div class="item"><span>3번스팬</span></div>
+        <div class="item"><span>3번스팬</span></div>
+        <div class="item"><span>3번스팬</span></div>
+    </div>
+
+    <!-- 
+    container 
+    *flex-direction : 배열방향 결정
+    *flex-wrap : 아이템을 다음 줄로 넘김
+    *justify-content : 마시멜로 정렬
+    *align-content : 꼬챙이 간격조정
+    *align-items : 꼬챙이 정렬
+
+    item
+    * align-self : 
+    * order : 
+
+    row
+    row-reverse
+    column
+    column-reverse
+
+    -->
+</body>
+</html>
