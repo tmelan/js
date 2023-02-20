@@ -13,12 +13,12 @@
 </head>
 <body>
 
-    중복확인 : <input type="text" id="popupInput">
+    중복확인 : <input type="text" id="popup">
 
     <script>
-        const popupInput = document.querySelector("#popupInput");
-        const parInput = window.opener.document.querySelector("input[name=id]"); //opener 부모창(review10)의 문서document에 접근
-        popupInput.value = parInput.value;
+        const popup = document.querySelector("#popup");
+        const idresult = window.opener.document.querySelector("input[name=id]");
+        popup.value = idresult.value;
     </script>
 
 </body>

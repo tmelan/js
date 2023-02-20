@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Tour 회원가입</title>
+    <style>
+        #wrapper {
+            flex-direction: column;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            margin-left: 20vh;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        body{
+            background-color: rgb(243, 240, 235);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <img src="flight.png" alt="logo" id="logo" width="30px"> Travel Tour
+    <table>
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" id="id" required></td>
+            <td><input type="button" id="check" onclick="idcheck();" value="중복확인"></td>
+        </tr>
+        <tr>
+            <td>비밀번호</td>
+            <td><input type="password" name="pw" required></td>	
+        </tr> 
+        <tr>
+            <td>이름</td>
+            <td><input type="text" name="name"></td>	
+        </tr>  
+        <tr>
+            <td>이메일</td>
+            <td><input type="email" name="email" placeholder="aaa@gmail.com"></td>	
+        </tr>  
+        <tr>
+            <td>전화번호</td>
+            <td><input type="tel" name="phone" placeholder="010-0000-0000"></td>	
+        </tr>  
+        <tr>
+            <td>성별</td>
+            <td><input type="radio" name="gender1" value="M">남자
+                <input type="radio" name="gender2" value="F">여자</td>	
+        </tr>   
+    </table>
+        <input type="button" src="" id="subscribe" value="제출">
+    </div>
+
+    <script>
+        function idcheck(){ 
+            window.open("4.popup.html", "아이디 중복확인", "width=400px,height=400px"
+
+); 
+        }
+    </script>
+</body>
+</html>
